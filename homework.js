@@ -61,6 +61,15 @@ function fahrenheitToKelvin (fahrenheit) {
 // arguments and returns the lesser of them. This function should
 // use an if/else statement.
 
+function lesser (numberA, numberB) {
+    if (numberA < numberB) {
+        return numberA
+    }
+    else {
+        return numberB
+    }
+}
+
 // 9. Create a function called multigreeting that takes a name
 // and a language code and returns a version of "Hello, <name>!"
 // in the specified language. The supported languages and their
