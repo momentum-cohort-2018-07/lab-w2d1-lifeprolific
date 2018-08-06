@@ -34,9 +34,17 @@ function isEven (number) {
 // Fahrenheit temperature as an argument and returns the
 // temperature in Celsius.
 
+function fahrenheitToCelsius (fahrenheit) {
+    return (fahrenheit - 32) * 5 / 9
+}
+
 // 6. Create a function called celsiusToFahrenheit that takes a
 // Celsius temperature as an argument and returns the
 // temperature in Fahrenheit.
+
+function celsiusToFahrenheit (celsius) {
+    return celsius * 9 / 5 + 32
+}
 
 // 7. Create a function called fahrenheitToKelvin that takes a
 // Fahrenheit temperature as an argument and returns the
