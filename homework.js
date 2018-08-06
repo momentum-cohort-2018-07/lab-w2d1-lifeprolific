@@ -82,6 +82,30 @@ function lesser (numberA, numberB) {
 //
 // If any other language code is used, return nothing.
 
+function multigreeting (name, languageCode) {
+
+    // Greg's note:
+    // I am using some data types and methods not yet presented in class
+    // because I am curious.  I used the following resources:
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+
+
+    var greeting = {
+        "en": "Hello, ",
+        "es": "¡Hola, ",
+        "fr": "Bonjour, ",
+        "eo": "Saluton, "
+    }
+
+    if (Object.keys(greeting).includes(languageCode)) {
+        return greeting[languageCode] + name + "!"
+    }
+    else {
+        return
+    }
+}
+
 // 10. Create a function, howOld, that takes a birthdate and a another
 // date (the "current date") and returns how many years old the person
 // with that birthdate was on that date. The dates should be JavaScript
