@@ -111,3 +111,21 @@ function multigreeting (name, languageCode) {
 // with that birthdate was on that date. The dates should be JavaScript
 // Date objects.
 // If the birth date is after than the current date, return nothing.
+
+function howOld (birthDate, currentDate) {
+    if (birthDate > currentDate) {
+        return
+    }
+    else {
+        return Math.floor(jSDateToGTDate(currentDate) - jSDateToGTDate(birthDate))
+    }
+
+    // this problem is super hard using js date objects because dates are
+    // stupid and inconsistent.  I'm going to use a janky personal date conversion
+    // to decimal where the ones are years, the first two decimals are months, and
+    // the next two decimals are days.  There has got to be a better way.
+
+    function jSDateToGTDate (date) {
+        return date.getFullYear() + 0.01 * date.getMonth() + .0001 * date.getDate()
+    }
+}
