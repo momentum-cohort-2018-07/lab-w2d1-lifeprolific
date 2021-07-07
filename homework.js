@@ -1,24 +1,50 @@
 // 1. Set the variable `givenName` to the string "Addison".
 
+let givenName = "Addison"
+
 // 2. Set candies equal to 20, people to 6, and leftover equal
 // to the remainder of dividing 20 by 6.
+
+let candies = 20
+let people = 6
+let leftover = 20 % 6
 
 // 3. Create a function called greeting that returns "Hello, <name>!",
 // where <name> is the name given as an argument to the function.
 
+function greeting (name) {
+    return "Hello, " + name + "!"
+}
+
 // 4. Create a function called isOdd that, given a number, will
 // return true if it is odd and false if it is not.
 
+function isOdd (number) {
+    return number % 1 === 0 && number % 2 !== 0
+}
+
 // 5. Create a function called isEven that, given a number, will
 // return true if it is even and false if it is not.
+
+function isEven (number) {
+    return number % 2 === 0
+}
 
 // 6. Create a function called fahrenheitToCelsius that takes a
 // Fahrenheit temperature as an argument and returns the
 // temperature in Celsius.
 
+function fahrenheitToCelsius (fahrenheit) {
+    return (fahrenheit - 32) * 5 / 9
+}
+
 // 6. Create a function called celsiusToFahrenheit that takes a
 // Celsius temperature as an argument and returns the
 // temperature in Fahrenheit.
+
+function celsiusToFahrenheit (celsius) {
+    return celsius * 9 / 5 + 32
+}
 
 // 7. Create a function called fahrenheitToKelvin that takes a
 // Fahrenheit temperature as an argument and returns the
@@ -27,9 +53,22 @@
 // Absolute zero (0 K) is equivalent to −273.15 C.
 // 1 degree Kelvin equals 1 degree Celsius.
 
+function fahrenheitToKelvin (fahrenheit) {
+    return fahrenheitToCelsius(fahrenheit) + 273.15
+}
+
 // 8. Create a function called lesser that takes two numbers as
 // arguments and returns the lesser of them. This function should
 // use an if/else statement.
+
+function lesser (numberA, numberB) {
+    if (numberA < numberB) {
+        return numberA
+    }
+    else {
+        return numberB
+    }
+}
 
 // 9. Create a function called multigreeting that takes a name
 // and a language code and returns a version of "Hello, <name>!"
@@ -43,8 +82,50 @@
 //
 // If any other language code is used, return nothing.
 
+function multigreeting (name, languageCode) {
+
+    // Greg's note:
+    // I am using some data types and methods not yet presented in class
+    // because I am curious.  I used the following resources:
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+
+
+    var greeting = {
+        "en": "Hello, ",
+        "es": "¡Hola, ",
+        "fr": "Bonjour, ",
+        "eo": "Saluton, "
+    }
+
+    if (Object.keys(greeting).includes(languageCode)) {
+        return greeting[languageCode] + name + "!"
+    }
+    else {
+        return
+    }
+}
+
 // 10. Create a function, howOld, that takes a birthdate and a another
 // date (the "current date") and returns how many years old the person
 // with that birthdate was on that date. The dates should be JavaScript
 // Date objects.
 // If the birth date is after than the current date, return nothing.
+
+function howOld (birthDate, currentDate) {
+    if (birthDate > currentDate) {
+        return
+    }
+    else {
+        return Math.floor(jSDateToGTDate(currentDate) - jSDateToGTDate(birthDate))
+    }
+
+    // this problem is super hard using js date objects because dates are
+    // stupid and inconsistent.  I'm going to use a janky personal date conversion
+    // to decimal where the ones are years, the first two decimals are months, and
+    // the next two decimals are days.  There has got to be a better way.
+
+    function jSDateToGTDate (date) {
+        return date.getFullYear() + 0.01 * date.getMonth() + .0001 * date.getDate()
+    }
+}

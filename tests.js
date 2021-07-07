@@ -142,4 +142,7 @@ describe('howOld', function () {
     assert.equal(40, howOld(new Date(1976, 9, 4), new Date(2017, 8, 10)));
     assert.equal(40, howOld(new Date(1976, 9, 4), new Date(2017, 9, 1)));
   })
+  it('should return nothing if current is less than born', function () {
+    assert.isUndefined(howOld(new Date(2018, 1, 1), new Date(2017, 1, 1)));
+  })
 })
